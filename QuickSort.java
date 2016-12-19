@@ -1,6 +1,4 @@
 /**
- * Francesca Ramunno
- * December 19, 2016
  * This class implements the algorithm "Quicksort" to sort
  * an unordered array of integers.
  * The complexity of this algorithm is:
@@ -38,11 +36,11 @@ public class QuickSort {
         }
     }
     
-    public void quickSort(int lowIndex, int highIndex) {
-        int i = lowIndex;
-        int j = highIndex;
+    public void quickSort(int min, int max) {
+        int i = min;
+        int j = max;
         
-        int pivot = arrToSort[lowIndex + (highIndex - lowIndex) / 2]; //set the pivot to the ~ middle value of the array
+        int pivot = arrToSort[min + (max - min) / 2]; //set the pivot to the ~ middle value of the array
         
         /**** Series of print statements to help understand how the algorithm works ****/
         
@@ -78,11 +76,11 @@ public class QuickSort {
         }
         
         // this is where the recursion happens!
-        if (lowIndex < j) { 
-            quickSort(lowIndex, j);
+        if (min < j) {
+            quickSort(min, j);
         }
-        if (i < highIndex) {
-            quickSort(i,highIndex);
+        if (i < max) {
+            quickSort(i,max);
         }
     }
     
@@ -94,7 +92,7 @@ public class QuickSort {
     
     public static void main(String arr[]) {
         QuickSort sorter = new QuickSort();
-        int[] inputArray = {3,9,12,1,10,15,7,6,15,18};
+        int[] inputArray = {3,19,12,1,10,1,7,6,25,18};
         
         System.out.println("------INITAL ARRAY------");
         
@@ -116,5 +114,7 @@ public class QuickSort {
         }
     }
 }
+
+
 
 
