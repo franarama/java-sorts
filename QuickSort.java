@@ -1,4 +1,6 @@
 /**
+ * Francesca Ramunno
+ * December 19, 2016
  * This class implements the algorithm "Quicksort" to sort
  * an unordered array of integers.
  * The complexity of this algorithm is:
