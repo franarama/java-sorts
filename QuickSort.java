@@ -48,12 +48,7 @@ public class QuickSort {
         System.out.println("PIVOT: " + pivot);
         System.out.print("ARRAY: ");
         
-        for (int k:arrToSort) {
-          System.out.print(k);
-          System.out.print(" ");
-        }
-      
-        System.out.println();
+        Functions.printArr(arrToSort);
         
         /**************************** End of print statements *************************/
         
@@ -69,11 +64,12 @@ public class QuickSort {
             }
             if (i<= j) { // if a large value is found on the left and a small value found on the right, switch them and continue the search.
                 System.out.println("SWITCH: " + arrToSort[i] + " AND " + arrToSort[j]);
-                switchNums(i,j);
+                Functions.swap(i,j,arrToSort);
                 i++;
                 j--;
             }
         }
+        System.out.println("------------------------------");
         
         // this is where the recursion happens!
         if (min < j) {
@@ -84,37 +80,22 @@ public class QuickSort {
         }
     }
     
-    private void switchNums(int i, int j) {
-        int tmp = arrToSort[i];
-        arrToSort[i] = arrToSort[j];
-        arrToSort[j] = tmp;
-    }
-    
     public static void main(String arr[]) {
+      
         QuickSort sorter = new QuickSort();
         int[] inputArray = {3,19,12,1,10,1,7,6,25,18};
         
-        System.out.println("------INITAL ARRAY------");
+        System.out.println("INITAL ARRAY");
+        Functions.printArr(inputArray);
         
-        for(int i:inputArray) {
-          System.out.print(i);
-          System.out.print(" ");
-        }
-        
-        System.out.println();
-        
+        System.out.println("------------------------------");
         sorter.sort(inputArray);
-        
+
         System.out.println();
-        System.out.println("-------FINAL ARRAY--------");
-        
-        for(int j:inputArray) {
-            System.out.print(j);
-            System.out.print(" ");
-        }
+        System.out.println("FINAL ARRAY");
+        Functions.printArr(inputArray);
     }
 }
-
 
 
 
